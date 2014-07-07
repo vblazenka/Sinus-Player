@@ -131,24 +131,7 @@ SinusPlayer.prototype = {
     drawGraph: function (average) {
         this.ctx.clearRect(0, 0, this.width, this.height);
 
-        var data = this.sourceNode.buffer.getChannelData(0);
-       // console.log(data);
-        var step = Math.ceil(data.length / this.width);
-       // console.log(step);
-        var amp = this.height / 2;
-
-        for(var i=0; i < this.width; i++){
-            var min = 1.0;
-            var max = -1.0;
-            for (var j=0; j<step; j++) {
-                var d = data[(i*step)+j];
-                if (d < min)
-                    min = d;
-                if (d > max)
-                    max = d;
-            }
-            this.ctx.fillRect(i,(1+min)*amp,1,Math.max(1,(max-min)*amp));
-        }
+       //TODO: draw sinus
     },
 
     onAudioProcess: function (average, bufferSrc) {
