@@ -6,23 +6,13 @@
 * ***********************/
 
 function SinusPlayer() {
-    // check if the default naming is enabled, if not use the chrome one.
+    // check if the Audio context is enabled
     if (! window.AudioContext) {
         if (! window.webkitAudioContext) {
             alert('no audiocontext found');
         }
         window.AudioContext = window.webkitAudioContext;
     }
-
-
-    // check if the default naming is enabled, if not use the chrome one.
-    if (! window.AudioContext) {
-        if (! window.webkitAudioContext) {
-            alert('no audiocontext found');
-        }
-        window.AudioContext = window.webkitAudioContext;
-    }
-
 
     /*
      An audio context controls the creation of the nodes it contains
